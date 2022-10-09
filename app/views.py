@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-def home(request):
-    return JsonResponse({"nome": "Gabriel Medeiros", "idade": 21 }) 
+class HomeApiView(APIView):
+    def get(self, request, format=None):
+        return Response({"nome": "Gabriel Medeiros", "idade": 21}, status=200)

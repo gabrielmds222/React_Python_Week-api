@@ -4,7 +4,7 @@ from teacher.models import Professor
 from teacher.serializers import ProfessorSerializer
 from rest_framework.status import HTTP_200_OK
 
-class ProfessorAPIView(APIView):
+class ProfessorApiView(APIView):
     def get(self, request, format=None):
         professores = Professor.objects.all()
         serializer = ProfessorSerializer(professores, many=True)
